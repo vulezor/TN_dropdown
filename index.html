@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Select 2</title>
+    <link href="node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="node_modules/">
+    <link href="tn_dropdown.css" rel="stylesheet">
+    <script src="jquery.js"></script>
+    <script src="tn_dropdown.js"></script>
+    <script src="clearBtn.js"></script>
+</head>
+<body>
+<div class="container">
+    <div class="col-md-6 col-md-offset-3">
+    <!-- <select style="width:30%" data-tags="true" id="test_select" data-placeholder="Select an option" data-allow-clear="true"> -->
+        <br><br>
+
+        <input type="text" id="sel" data-value="" class="form-control" />
+        <br><br>
+
+        <input type="text" id="sel2" data-value="" class="form-control" />
+        <br><br>
+
+        <!--<textarea id="dd"></textarea>
+
+
+        <textarea id="dd" cols="123"></textarea>-->
+    </div>
+
+
+
+</div>
+
+
+
+<button type="button" id="get">button</button>
+<!--proveriti da li je setovan ajax.-->
+
+
+
+<script>
+    $('#sel').TN_dropdown({
+        ajax_enable:true,
+        overflow_length: 10,
+        ajax:{
+            url: 'test.php',
+            data: {a:'all'},
+            processResults: function(response){
+               // response = JSON.parse(response);
+                var response =  response;
+                 response = $.map(response, function( n ) {
+                    return {
+                        text:n.name,
+                        value:n.name
+                    }
+                });
+                return response;
+            }
+        }
+    }).TN_clearBtn({
+        clearValue:function(){
+            this.element.attr("data-value", "");
+        }
+    });
+
+
+   /*$('textarea#dd').TN_clearBtn({
+        clearValue:function(){
+            this.element.attr("data-value", "");
+        }
+    });*/
+
+</script>
+</body>
+</html>

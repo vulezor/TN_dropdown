@@ -1,0 +1,53 @@
+ 
+ .TN_dropdown_load{
+     position:asolute;
+     right:0%;
+     top:0%;
+     margin-top:6px;
+     margin-right:6px;
+}
+
+.TN_dropdown{
+    position:relative;
+}
+
+.clearBtn{
+    position: absolute;
+    right: 0;
+    padding: 4px 10px;
+    display: block;
+    cursor: pointer;
+    color: #999;
+    font-size: 20px;
+    line-height: normal;
+    visibility:hidden;
+}
+
+.tnDropdown-loader{
+    background:#fff;
+    color:#999;
+}
+
+.auto-complete-box{
+    position:absolute;
+    border:1px solid #ccc;
+    list-style:none;
+    margin-top:35px;
+    z-index: 9999;
+}
+.auto-complete-box>ul{
+    margin:0px;
+    padding:0px;
+    position:relative;
+}
+.auto-complete-box>ul>li{
+    list-style:none;
+    padding:3px 10px;
+    display:block;
+    cursor:pointer;
+    font-size:12px
+}
+.auto-complete-active{
+    background-color:#2F6F9F;
+    color:#fff;
+}
